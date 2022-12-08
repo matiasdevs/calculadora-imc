@@ -11,6 +11,9 @@
     <script src="main.js" defer></script>
   </head>
   <body>
+    <div class="screen-error">
+      Digite somente numeros
+    </div>
     <div class="container">
       <main class="card">
         <form action="" id="calculadora-imc">
@@ -20,18 +23,25 @@
             <input type="text" id="peso" placeholder="80">
           </div>
           <div class="input-wrapper">
-            <label for="altura">Altura (cm)</label>
-            <input type="text" id="altura" placeholder="180">
+            <label for="altura">Altura (m)</label>
+            <input type="text" id="altura" placeholder="1.80">
           </div>
-
           <button type="submit" id="button">Calcular IMC
             <img src="assets/button.svg" alt="seta">
           </button>
         </form>
-
       </main>
     </div>
+    <div class="modal-wrapper">
+      <div class="modal card">
+        <h2 class="title">
+          <button class="close"> <img src="assets/close-icon.svg" alt="botao fechar">
 
+          </button>
+          <span>Seu IMC é de X</span>
+        </h2>
 
+      </div>
+    </div>
   </body>
 </html>
