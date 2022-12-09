@@ -37,6 +37,9 @@ function displayMessage(result){
   Modal.open();
 }
 
+window.addEventListener('input', function(){
+  errorAlert.close();
+})
 // form.onsubmit = () => {}
 
 // form.onsubmit = envioFormulario;
