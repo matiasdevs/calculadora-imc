@@ -1,4 +1,6 @@
 import { Modal } from './modal.js'
+import { errorAlert } from './error-alert.js';
+import { calculaIMC, NaN } from './utils.js';
 
 const form = document.querySelector('form');
 const inputPeso = document.querySelector('#peso');
@@ -9,17 +11,22 @@ form.onsubmit = function(event){
 
   const peso = inputPeso.value;
   const altura = inputAltura.value;
-  const result = calculaIMC(peso, altura);
 
+  const errorNaN = NaN(peso) || NaN(altura);
+
+  if(errorNaN) {
+    errorAlert.open();
+    return;
+  }
+
+  errorAlert.close();
+
+  const result = calculaIMC(peso, altura);
   Modal.message.innerText = `Seu IMC é de ${result.toFixed(2)}`;
   Modal.open();
   
 }
 
-function calculaIMC(peso, altura){
-  let IMC = peso / (altura * altura);
-  return IMC;
-}
 
 // form.onsubmit = () => {}
 
